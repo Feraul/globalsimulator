@@ -221,8 +221,7 @@ for i = 1:length(pointinedg)
     [fw,~,gama,] = twophasevar([Sleft Smid Sright],numcase);
     
     %Calculate the Rankine-Hugoniot ratio:
-    [dfwdS_rh,dgamadS_rh] = ...
-        calcdfunctiondS([fw(1) fw(3)],[gama(1) gama(3)],[Sleft Sright],0);
+    [dfwdS_rh,dgamadS_rh] = calcdfunctiondS([fw(1) fw(3)],[gama(1) gama(3)],[Sleft Sright],0);
     %Get accuracy (RH ratio):
     dfwdS_rh = dfwdS_rh*(abs(dfwdS_rh) > tol);
     
